@@ -4,10 +4,10 @@ import './FloatingDock.css'
 
 function FloatingDock() {
   const dockItems = [
-    { id: 'home', icon: Home, label: 'Beranda', href: '#hero' },
-    { id: 'projects', icon: FolderOpen, label: 'Proyek', href: '#projects' },
-    { id: 'certs', icon: Award, label: 'Sertifikat', href: '#certifications' },
-    { id: 'contact', icon: Mail, label: 'Kontak', href: '#contact' }
+    { id: 'home', icon: Home, label: 'Home', href: '#hero' },
+    { id: 'projects', icon: FolderOpen, label: 'Projects', href: '#projects' },
+    { id: 'certs', icon: Award, label: 'Certification', href: '#certifications' },
+    { id: 'contact', icon: Mail, label: 'Contact', href: '#contact' }
   ]
 
   return (

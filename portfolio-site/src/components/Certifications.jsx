@@ -99,8 +99,8 @@ function Certifications() {
   return (
     <section id="certifications">
       <div className="section-header">
-        <h2>Sertifikat & Pelatihan</h2>
-        <p>Komitmen berkelanjutan untuk pengembangan profesional dan penguasaan teknologi terkini</p>
+        <h2>Certifications</h2>
+        <p>An ongoing commitment to professional development and mastery of the latest technologies</p>
       </div>
       
       <motion.div
