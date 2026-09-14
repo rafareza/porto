@@ -41,6 +41,30 @@
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.85rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.project-image > span {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  padding: 0 1rem;
+  text-align: center;
+}
+
+[data-theme="dark"] .project-image > span {
+  color: white;
 }
 
 [data-theme="dark"] .project-image {

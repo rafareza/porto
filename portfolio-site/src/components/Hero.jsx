@@ -19,7 +19,7 @@ function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        Frontend Developer, Data Analyst, UI/UX Designer & AI Specialist
+        Rafa Rezandrya Jaelani
       </motion.h1>
       
       <motion.p
@@ -28,7 +28,9 @@ function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5 }}
       >
-        Membangun pengalaman digital yang fungsional dan bermakna melalui desain yang berpusat pada pengguna dan teknologi yang tepat.
+        Front-End Developer, Data Analyst, UI/UX Designer & AI Tools Specialist
+        <br />
+        I enjoy transforming data into clear insights and creating seamless, intuitive interfaces that enhance user interaction.
       </motion.p>
       
       <motion.div
@@ -38,12 +40,12 @@ function Hero() {
         transition={{ duration: 0.6, delay: 0.7 }}
       >
         <a href="#projects" className="btn btn-primary">
-          Lihat Karya
+          See My Work
           <ArrowRight size={16} />
         </a>
-        <a href="#" className="btn btn-secondary" download>
+        <a href="https://drive.google.com/file/d/1rLiAtRRGgTRGwHK6BwYeYfDQoRDxZp3i/view?usp=sharing" target="blank" className="btn btn-secondary" download>
           <Download size={16} />
-          Unduh CV
+          My CV
         </a>
       </motion.div>
     </section>

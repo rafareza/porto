@@ -23,51 +23,55 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'E-commerce Platform',
-      description: 'Platform e-commerce modern dengan pengalaman belanja yang intuitif, sistem pembayaran terintegrasi, dan dashboard admin yang komprehensif.',
-      tags: ['React', 'TypeScript', 'UI/UX'],
-      demoUrl: 'https://demo-ecommerce.example.com',
-      githubUrl: 'https://github.com/example/ecommerce-platform'
+      title: 'Acacia Water',
+      description: 'Website for selling and purchasing water and gas at Acacia Water stores.',
+      tags: ['React', 'TypeScript', 'Supabase'],
+      demoUrl: 'https://acacia-water.vercel.app/',
+      githubUrl: 'https://github.com/rafareza/acacia-water'
     },
     {
       id: 2,
-      title: 'Analytics Dashboard',
-      description: 'Dashboard analitik real-time untuk memantau metrik bisnis kunci dengan visualisasi data interaktif dan insight yang dapat ditindaklanjuti.',
-      tags: ['Python', 'Tableau', 'Data Viz'],
-      demoUrl: 'https://demo-analytics.example.com',
-      githubUrl: 'https://github.com/example/analytics-dashboard'
+      title: 'Design UI/UX Jacoffee',
+      description: 'Designing the user interface (UI) and user experience (UX) for Jacoffee coffee shop',
+      tags: ['Figma'],
+      demoUrl: 'https://www.figma.com/proto/KAwUZgVfSJbND6TGMCthHt/jacoffee?page-id=0%3A1&node-id=431-6742&p=f&viewport=-1638%2C257%2C0.18&t=nzovOmIiJ7AaWPhI-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=431%3A6720',
     },
     {
       id: 3,
-      title: 'Design System',
-      description: 'Sistem desain komprehensif yang memastikan konsistensi visual dan meningkatkan efisiensi tim dengan komponen yang dapat digunakan kembali.',
-      tags: ['Figma', 'Component Library'],
-      demoUrl: 'https://www.figma.com/@example',
-      githubUrl: 'https://github.com/example/design-system'
+      title: 'Kasku',
+      description: 'Web-based application for financial record.',
+      tags: ['React', 'TypeScript', 'Supabase'],
+      demoUrl: 'https://kasku-ten.vercel.app/',
+      githubUrl: 'https://github.com/rafareza/Kasku'
     },
     {
       id: 4,
-      title: 'AI Chatbot Assistant',
-      description: 'Chatbot berbasis AI yang membantu pengguna dengan pertanyaan umum, memberikan rekomendasi, dan meningkatkan pengalaman customer service.',
-      tags: ['OpenAI', 'LangChain', 'Next.js'],
-      demoUrl: 'https://demo-chatbot.example.com',
-      githubUrl: 'https://github.com/example/ai-chatbot'
+      title: 'Model Comparison And Sentiment Analysis',
+      description: 'Comparison of models and sentiment analysis of the NotebookLM application using SVM and Naive Bayes.',
+      tags: ['Python', 'Machine Learning', 'SVM', 'Naive Bayes'],
+      demoUrl: 'https://colab.research.google.com/drive/1RVEEBxJNTDvriXgvI4jgGw8KMCf16EII?usp=sharing',
     },
     {
       id: 5,
-      title: 'Fitness Tracker App',
-      description: 'Aplikasi mobile untuk pelacakan aktivitas fitness dengan antarmuka yang intuitif dan fitur gamifikasi untuk meningkatkan motivasi pengguna.',
-      tags: ['UI/UX', 'Mobile', 'Prototyping'],
+      title: 'Mental Health Detection',
+      description: 'A mental health detection website using SVM and Naive Bayes algorithms. Built with Flask and machine learning models.',
+      tags: ['Python','Flask','Machine Learning', 'SVM', 'Naive Bayes'],
       demoUrl: 'https://demo-fitness.example.com',
       githubUrl: 'https://github.com/example/fitness-tracker'
     },
     {
       id: 6,
-      title: 'Automated Data Pipeline',
-      description: 'Pipeline data otomatis untuk mengumpulkan, membersihkan, dan menganalisis data dari berbagai sumber untuk mendukung keputusan bisnis.',
-      tags: ['Python', 'SQL', 'ETL'],
-      demoUrl: 'https://demo-pipeline.example.com',
-      githubUrl: 'https://github.com/example/data-pipeline'
+      title: 'Bunga Indah Website',
+      description: 'Website for selling and purchasing flowers at the Bunga Indah shop',
+      tags: ['PHP', 'MySQL', 'Bootstrap'],
+      githubUrl: 'https://github.com/rafareza/bunga-indah'
+    },
+    {
+      id: 7,
+      title: 'Portofolio Website',
+      description: 'A website to showcase my portfolio.',
+      tags: ['React', 'Vite', 'Tailwind CSS', 'JavaScript'],
+      githubUrl: 'https://github.com/rafareza/portofolio'
     }
   ]
 
@@ -94,8 +98,8 @@ function Projects() {
   return (
     <section id="projects">
       <div className="section-header">
-        <h2>Karya Terpilih</h2>
-        <p>Koleksi proyek yang menunjukkan kemampuan teknis dan pemahaman mendalam tentang kebutuhan pengguna</p>
+        <h2>Projects</h2>
+        <p>Some projects I've worked on</p>
       </div>
       
       <motion.div
@@ -112,7 +116,16 @@ function Projects() {
             variants={itemVariants}
             whileHover={{ y: -8, transition: { duration: 0.25 } }}
           >
-            <div className="project-image">{project.title}</div>
+            <div 
+              className="project-image" 
+              style={{ 
+                backgroundImage: `url('/background/${project.title.toLowerCase().replace(/\s+/g, '-')}.png')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            >
+              {project.title}
+            </div>
             <div className="project-content">
               <div className="project-tags">
                 {project.tags.map((tag, index) => (

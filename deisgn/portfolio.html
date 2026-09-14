@@ -1,0 +1,1625 @@
+<!doctype html>
+<html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Frontend Developer, UI/UX Designer, Data Analyst & AI Specialist</title>
+  <meta name="description" content="Portfolio profesional - Frontend Developer, UI/UX Designer, Data Analyst, dan Generative AI Specialist. Lihat proyek dan studi kasus terbaik saya.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f5f5f7;
+      --surface-warm: #fbfbfd;
+      --fg: #1d1d1f;
+      --fg-2: #424245;
+      --muted: #6e6e73;
+      --meta: #86868b;
+      --border: #d2d2d7;
+      --border-soft: #e8e8ed;
+      --accent: #0071e3;
+      --accent-on: #ffffff;
+      --accent-hover: #0077ed;
+      --accent-active: #0066cc;
+      --success: #16a34a;
+      --warn: #eab308;
+      --danger: #dc2626;
+      --font-display: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: "SF Mono", ui-monospace, "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+      --text-xs: 12px;
+      --text-sm: 14px;
+      --text-base: 17px;
+      --text-lg: 21px;
+      --text-xl: 28px;
+      --text-2xl: 40px;
+      --text-3xl: 56px;
+      --text-4xl: 80px;
+      --leading-body: 1.47;
+      --leading-tight: 1.05;
+      --tracking-display: -0.015em;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-12: 48px;
+      --section-y-desktop: 100px;
+      --section-y-tablet: 64px;
+      --section-y-phone: 40px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-pill: 980px;
+      --elev-flat: none;
+      --elev-ring: 0 0 0 1px var(--border);
+      --elev-raised: 0 12px 32px rgba(0, 0, 0, 0.08);
+      --focus-ring: 0 0 0 4px color-mix(in oklab, var(--accent), transparent 65%);
+      --motion-fast: 150ms;
+      --motion-base: 220ms;
+      --ease-standard: cubic-bezier(0.28, 0, 0.22, 1);
+      --container-max: 1024px;
+      --container-gutter-desktop: 22px;
+      --container-gutter-tablet: 18px;
+      --container-gutter-phone: 16px;
+    }
+    
+    [data-theme="dark"] {
+      --bg: #000000;
+      --surface: #1d1d1f;
+      --fg: #ffffff;
+      --fg-2: #8e8e93;
+      --muted: #aeaeb2;
+      --meta: #d2d2d7;
+      --border: #3a3a3c;
+      --border-soft: #505053;
+      --accent: #2997ff;
+      --accent-hover: #56a3ff;
+      --accent-active: #0066cc;
+      --elev-raised: 0 12px 32px rgba(0, 0, 0, 0.3);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--fg);
+      line-height: var(--leading-body);
+      transition: background var(--motion-base) var(--ease-standard), color var(--motion-base) var(--ease-standard);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .glass {
+      background: var(--surface-warm);
+      backdrop-filter: blur(40px) saturate(1.5);
+      -webkit-backdrop-filter: blur(40px) saturate(1.5);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--elev-raised);
+    }
+    
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: color-mix(in oklab, var(--bg) 80%, transparent);
+      backdrop-filter: blur(40px) saturate(1.5);
+      -webkit-backdrop-filter: blur(40px) saturate(1.5);
+      border-bottom: 1px solid var(--border);
+      padding: calc(var(--space-4) / 2) 0;
+      animation: slideDown 0.6s var(--ease-standard);
+    }
+    
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    [data-theme="dark"] header {
+      background: color-mix(in oklab, #000000 80%, transparent);
+    }
+    
+    nav {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-gutter-desktop);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-6);
+    }
+    
+    .navbar-group {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: var(--space-5);
+      list-style: none;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-links li {
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: navLinkIn 0.5s var(--ease-standard) forwards;
+    }
+    
+    @keyframes navLinkIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .nav-links li:nth-child(1) { animation-delay: 0.1s; }
+    .nav-links li:nth-child(2) { animation-delay: 0.15s; }
+    .nav-links li:nth-child(3) { animation-delay: 0.2s; }
+    .nav-links li:nth-child(4) { animation-delay: 0.25s; }
+    
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 400;
+      transition: color var(--motion-fast) var(--ease-standard);
+      display: block;
+      white-space: nowrap;
+      position: relative;
+      padding: var(--space-1) 0;
+      letter-spacing: -0.01em;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width var(--motion-fast) var(--ease-standard);
+    }
+    
+    .nav-links a:hover {
+      color: var(--fg);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .nav-links a.active {
+      color: var(--fg);
+      font-weight: 500;
+    }
+    
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      flex-shrink: 0;
+    }
+    
+    .dock {
+      display: inline-flex;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      background: var(--surface);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      border: 1px solid var(--border);
+      transition: border-color var(--motion-fast) var(--ease-standard);
+    }
+    
+    .dock-btn {
+      padding: var(--space-2) var(--space-3);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--fg);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      transition: background var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard);
+      position: relative;
+    }
+    
+    .dock-btn:not(:last-child) {
+      border-right: 1px solid var(--border-soft);
+    }
+    
+    .dock-btn svg {
+      width: var(--space-5);
+      height: var(--space-5);
+      transition: transform var(--motion-fast) var(--ease-standard);
+    }
+    
+    .dock-btn:hover {
+      background: var(--surface-warm);
+    }
+    
+    .dock-btn.active {
+      background: var(--surface-warm);
+      color: var(--fg);
+    }
+    
+    .dock-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    
+    main {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-gutter-desktop);
+    }
+    
+    section {
+      padding: var(--section-y-desktop) 0;
+    }
+    
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: calc(var(--section-y-desktop) * 1.1) 0;
+    }
+    
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: var(--space-4);
+    }
+    
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, var(--text-3xl));
+      font-weight: 600;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-display);
+      margin-bottom: var(--space-4);
+      max-width: 20ch;
+      color: var(--fg);
+    }
+    
+    .lead {
+      font-size: var(--text-lg);
+      color: var(--muted);
+      margin-bottom: var(--space-8);
+      max-width: 50ch;
+      line-height: var(--leading-body);
+      letter-spacing: -0.01em;
+    }
+    
+    .cta-group {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .btn {
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-pill);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      cursor: pointer;
+      border: none;
+      font-family: var(--font-body);
+      letter-spacing: -0.01em;
+      line-height: 1;
+      transition: background var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-standard);
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-on);
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+    
+    .btn-primary:active {
+      background: var(--accent-active);
+    }
+    
+    .btn-primary:focus-visible {
+      box-shadow: var(--focus-ring);
+      outline: none;
+    }
+    
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--fg);
+      border: 1px solid var(--border);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--surface-warm);
+      border-color: var(--border);
+    }
+    
+    .btn-secondary:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, var(--text-2xl));
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-3);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+    
+    .section-header p {
+      color: var(--muted);
+      font-size: var(--text-base);
+      max-width: 60ch;
+      margin: 0 auto;
+      line-height: var(--leading-body);
+    }
+    
+    .about-top {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .about-photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .about-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 12px 32px oklch(0% 0 0 / 0.12);
+      position: relative;
+      background: var(--surface);
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .about-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      background: linear-gradient(135deg, oklch(90% 0 0 / 0.8), oklch(96% 0 0 / 0.8));
+    }
+    [data-theme="dark"] .about-photo-placeholder {
+      background: linear-gradient(135deg, oklch(18% 0 0), oklch(22% 0 0));
+    }
+    .about-photo-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: var(--accent);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 4px 8px;
+      border-radius: 999px;
+      box-shadow: 0 4px 12px oklch(60% 0.22 155 / 0.35);
+    }
+    .about-intro h3 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      margin-bottom: 0.6rem;
+    }
+    .about-intro p { color: var(--muted); line-height: 1.7; font-size: 1rem; }
+    @media (max-width: 700px) {
+      .about-top { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+      .about-photo { width: 180px; height: 180px; border-radius: 18px; }
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 0;
+    }
+    
+    .skill-category {
+      padding: 1.75rem;
+      border-radius: 14px;
+    }
+    
+    .skill-category.glass {
+      background: var(--surface-glass);
+      backdrop-filter: blur(12px) saturate(1.3);
+      -webkit-backdrop-filter: blur(12px) saturate(1.3);
+      border: 1px solid var(--border);
+    }
+    
+    .skill-category h3 {
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-body);
+    }
+    
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .skill-tag {
+      background: oklch(0% 0 0 / 0.04);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--fg);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    
+    .skill-tag:hover {
+      border-color: var(--accent);
+      background: oklch(from var(--accent) l c h / 0.06);
+    }
+    
+    [data-theme="dark"] .skill-tag {
+      background: oklch(100% 0 0 / 0.05);
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .project-card {
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+      background: var(--surface-glass);
+      backdrop-filter: blur(14px) saturate(1.3);
+      -webkit-backdrop-filter: blur(14px) saturate(1.3);
+      border: 1px solid var(--border);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 32px oklch(0% 0 0 / 0.12);
+    }
+    
+    .project-image {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, oklch(90% 0.06 265), oklch(90% 0.06 300));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+    
+    [data-theme="dark"] .project-image {
+      background: linear-gradient(135deg, oklch(25% 0.06 265), oklch(25% 0.06 300));
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      background: oklch(from var(--accent) l c h / 0.1);
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+    }
+    
+    .project-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .cert-card {
+      padding: 1.75rem;
+      border-radius: 14px;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+    
+    .cert-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 28px oklch(0% 0 0 / 0.1);
+    }
+    
+    .cert-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cert-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: oklch(from var(--accent) l c h / 0.12);
+      color: var(--accent);
+    }
+    
+    .cert-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+    
+    .cert-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }
+    
+    .cert-issuer {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    
+    .cert-meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
+    
+    .cert-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    
+    .cert-meta svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0.7;
+    }
+    
+    .contact {
+      border-radius: 16px;
+      padding: 4rem 3rem;
+      text-align: center;
+      background: var(--surface-glass);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border: 1px solid var(--border);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--fg);
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+    
+    .social-link:hover {
+      border-color: var(--accent);
+      background: oklch(from var(--accent) l c h / 0.06);
+      box-shadow: 0 4px 12px oklch(0% 0 0 / 0.08);
+    }
+    
+    .social-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    
+    .contact-form {
+      max-width: 500px;
+      margin: 3rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    label {
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    
+    input, textarea {
+      padding: 0.875rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: oklch(100% 0 0 / 0.3);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    
+    [data-theme="dark"] input, [data-theme="dark"] textarea {
+      background: oklch(0% 0 0 / 0.3);
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: oklch(100% 0 0 / 0.5);
+    }
+    
+    [data-theme="dark"] input:focus, [data-theme="dark"] textarea:focus {
+      background: oklch(0% 0 0 / 0.4);
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .floating-dock-wrap {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      z-index: 120;
+      pointer-events: none;
+      animation: dockIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+    @keyframes dockIn { from { opacity:0; transform: translateX(-50%) translateY(40px);} to { opacity:1; transform: translateX(-50%) translateY(0);} }
+    .floating-dock {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 8px 14px;
+      border-radius: 18px;
+      background: oklch(100% 0 0 / 0.55);
+      backdrop-filter: blur(18px) saturate(1.5);
+      -webkit-backdrop-filter: blur(18px) saturate(1.5);
+      border: 1px solid oklch(85% 0 0 / 0.5);
+      box-shadow: 0 8px 32px oklch(0% 0 0 / 0.15), 0 1px 2px oklch(0% 0 0 / 0.08);
+    }
+    [data-theme="dark"] .floating-dock {
+      background: oklch(18% 0 0 / 0.55);
+      border-color: oklch(35% 0 0 / 0.5);
+      box-shadow: 0 8px 32px oklch(0% 0 0 / 0.4);
+    }
+    .fd-item {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--fg);
+      text-decoration: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), background 0.2s;
+    }
+    .fd-item svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .fd-item:hover { transform: scale(1.18) translateY(-6px); background: oklch(0% 0 0 / 0.07); }
+    [data-theme="dark"] .fd-item:hover { background: oklch(100% 0 0 / 0.1); }
+    .fd-item:active { transform: scale(0.95); }
+    .fd-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .fd-item .fd-tip {
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: oklch(18% 0 0);
+      color: white;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 5px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s, transform 0.18s;
+      box-shadow: 0 4px 12px oklch(0% 0 0 / 0.18);
+    }
+    [data-theme="dark"] .fd-item .fd-tip { background: oklch(95% 0 0); color: oklch(15% 0 0); }
+    .fd-item:hover .fd-tip { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .fd-sep { width: 1px; height: 28px; background: oklch(85% 0 0 / 0.45); margin: 0 6px; flex-shrink: 0; }
+    [data-theme="dark"] .fd-sep { background: oklch(40% 0 0 / 0.5); }
+    @media (max-width: 640px) {
+      .floating-dock { padding: 6px 10px; gap: 1px; border-radius: 16px; }
+      .fd-item { width: 40px; height: 40px; }
+      .fd-item svg { width: 17px; height: 17px; }
+    }
+    footer { padding-bottom: 88px; }
+    footer {
+      text-align: center;
+      padding: 3rem 2rem 88px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 920px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1.5rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .dock-btn span {
+        display: none;
+      }
+      
+      .dock-btn {
+        padding: 0.5rem 0.7rem;
+      }
+      
+      section {
+        padding: 4rem 0;
+      }
+      
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .certs-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact {
+        padding: 3rem 1.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .navbar-group {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        gap: 0.75rem;
+      }
+      
+      .nav-links a {
+        font-size: 0.9rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      main {
+        padding: 0 1rem;
+      }
+      
+      .cta-group {
+        width: 100%;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="navbar-group">
+        <a href="#" class="brand">Portfolio</a>
+        <ul class="nav-links">
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#projects">Karya</a></li>
+          <li><a href="#certifications">Sertifikat</a></li>
+          <li style="transform: translate(295px, 1px);"><a href="#contact">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="navbar-right">
+        <div class="dock" role="radiogroup" aria-label="Theme selector">
+          <button class="dock-btn active" data-theme-val="light" role="radio" aria-checked="true" aria-label="Toggle Light Mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <span>Light</span>
+          </button>
+          <button class="dock-btn" data-theme-val="dark" role="radio" aria-checked="false" aria-label="Toggle Dark Mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <span>Dark</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero" data-od-id="hero">
+      <div class="eyebrow">Portfolio</div>
+      <h1>Frontend Developer, Data Analyst, UI/UX Designer &amp; AI Specialist</h1>
+      <p class="lead">Membangun pengalaman digital yang fungsional dan bermakna melalui desain yang berpusat pada pengguna dan teknologi yang tepat.</p>
+<div class="cta-group">
+        <a href="#projects" class="btn btn-primary">Lihat Karya</a>
+        <a href="#" class="btn btn-secondary" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Unduh CV
+        </a>
+      </div>
+    </section>
+
+    <section id="about" data-od-id="about">
+      <div class="section-header">
+        <h2>Tentang Saya</h2>
+        <div class="about-top">
+          <div class="about-photo-wrap">
+            <div class="about-photo">
+              <img src="/api/placeholder?text=Foto+Anda" alt="Foto Profil" loading="lazy" decoding="async">
+              <span class="about-photo-badge">Frontend Developer</span>
+            </div>
+            <div class="about-photo-placeholder" role="img" aria-label="Foto profil placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v6M2 10l10-5 10 5-10 5-10-5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="about-intro">
+            <h3>Frontend Developer, Data Analyst, UI/UX Designer & AI Specialist</h3>
+            <p class="lead animated-text">Membangun pengalaman digital yang fungsional dan bermakna melalui desain yang berpusat pada pengguna dan teknologi yang tepat.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-grid">
+        <div class="skill-category glass">
+          <h3>Frontend Development</h3>
+          <ul class="skill-list">
+            <li class="skill-tag">React</li>
+            <li class="skill-tag">Vue.js</li>
+            <li class="skill-tag">TypeScript</li>
+            <li class="skill-tag">Next.js</li>
+            <li class="skill-tag">Tailwind CSS</li>
+            <li class="skill-tag">Vite</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category glass">
+          <h3>Data Analysis</h3>
+          <ul class="skill-list">
+            <li class="skill-tag">Python</li>
+            <li class="skill-tag">Pandas</li>
+            <li class="skill-tag">SQL</li>
+            <li class="skill-tag">Tableau</li>
+            <li class="skill-tag">Power BI</li>
+            <li class="skill-tag">Excel</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category glass">
+          <h3>UI/UX Design</h3>
+          <ul class="skill-list">
+            <li class="skill-tag">Figma</li>
+            <li class="skill-tag">Adobe XD</li>
+            <li class="skill-tag">Sketch</li>
+            <li class="skill-tag">Prototyping</li>
+            <li class="skill-tag">User Research</li>
+            <li class="skill-tag">Design Systems</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category glass">
+          <h3>AI &amp; Tools</h3>
+          <ul class="skill-list">
+            <li class="skill-tag">OpenAI</li>
+            <li class="skill-tag">LangChain</li>
+            <li class="skill-tag">Prompt Engineering</li>
+            <li class="skill-tag">Git</li>
+            <li class="skill-tag">Vercel</li>
+            <li class="skill-tag">Framer Motion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" data-od-id="projects">
+      <div class="section-header">
+        <h2>Karya Terpilih</h2>
+        <p>Koleksi proyek yang menunjukkan kemampuan teknis dan pemahaman mendalam tentang kebutuhan pengguna</p>
+      </div>
+      
+      <div class="projects-grid">
+        <article class="project-card" data-od-id="project-card-ecommerce">
+          <div class="project-image">E-commerce Platform</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">UI/UX</span>
+            </div>
+            <h3>E-commerce Platform</h3>
+            <p>Platform e-commerce modern dengan pengalaman belanja yang intuitif, sistem pembayaran terintegrasi, dan dashboard admin yang komprehensif.</p>
+          </div>
+        </article>
+        
+        <article class="project-card" data-od-id="project-card-analytics">
+          <div class="project-image">Analytics Dashboard</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">Data Viz</span>
+            </div>
+            <h3>Analytics Dashboard</h3>
+            <p>Dashboard analitik real-time untuk memantau metrik bisnis kunci dengan visualisasi data interaktif dan insight yang dapat ditindaklanjuti.</p>
+          </div>
+        </article>
+        
+        <article class="project-card" data-od-id="project-card-design-system">
+          <div class="project-image">Design System</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">Figma</span>
+              <span class="tag">Component Library</span>
+            </div>
+            <h3>Design System</h3>
+            <p>Sistem desain komprehensif yang memastikan konsistensi visual dan meningkatkan efisiensi tim dengan komponen yang dapat digunakan kembali.</p>
+          </div>
+        </article>
+        
+        <article class="project-card" data-od-id="project-card-ai-chatbot">
+          <div class="project-image">AI Chatbot</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">OpenAI</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">Next.js</span>
+            </div>
+            <h3>AI Chatbot Assistant</h3>
+            <p>Chatbot berbasis AI yang membantu pengguna dengan pertanyaan umum, memberikan rekomendasi, dan meningkatkan pengalaman customer service.</p>
+          </div>
+        </article>
+        
+        <article class="project-card" data-od-id="project-card-mobile-app">
+          <div class="project-image">Mobile App Design</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Mobile</span>
+              <span class="tag">Prototyping</span>
+            </div>
+            <h3>Fitness Tracker App</h3>
+            <p>Aplikasi mobile untuk pelacakan aktivitas fitness dengan antarmuka yang intuitif dan fitur gamifikasi untuk meningkatkan motivasi pengguna.</p>
+          </div>
+        </article>
+        
+        <article class="project-card" data-od-id="project-card-data-pipeline">
+          <div class="project-image">Data Pipeline</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">ETL</span>
+            </div>
+            <h3>Automated Data Pipeline</h3>
+            <p>Pipeline data otomatis untuk mengumpulkan, membersihkan, dan menganalisis data dari berbagai sumber untuk mendukung keputusan bisnis.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications" data-od-id="certifications">
+      <div class="section-header">
+        <h2>Sertifikat &amp; Pelatihan</h2>
+        <p>Komitmen berkelanjutan untuk pengembangan profesional dan penguasaan teknologi terkini</p>
+      </div>
+      
+      <div class="certs-grid">
+        <article class="cert-card glass" data-od-id="cert-card-1">
+          <div class="cert-card-header">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Professional Frontend Developer</h3>
+              <div class="cert-issuer">Meta</div>
+            </div>
+          </div>
+          <div class="cert-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              2025
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Credential ID: META-2025-FE
+            </span>
+          </div>
+        </article>
+        
+        <article class="cert-card glass" data-od-id="cert-card-2">
+          <div class="cert-card-header">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3>Google Data Analytics Professional</h3>
+              <div class="cert-issuer">Google</div>
+            </div>
+          </div>
+          <div class="cert-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              2024
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Credential ID: GOOGLE-DA-2024
+            </span>
+          </div>
+        </article>
+        
+        <article class="cert-card glass" data-od-id="cert-card-3">
+          <div class="cert-card-header">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>UI/UX Design Specialization</h3>
+              <div class="cert-issuer">Interaction Design Foundation</div>
+            </div>
+          </div>
+          <div class="cert-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              2025
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Credential ID: IDF-UX-2025
+            </span>
+          </div>
+        </article>
+        
+        <article class="cert-card glass" data-od-id="cert-card-4">
+          <div class="cert-card-header">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+            <div>
+              <h3>Generative AI with Large Language Models</h3>
+              <div class="cert-issuer">DeepLearning.AI</div>
+            </div>
+          </div>
+          <div class="cert-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              2026
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Credential ID: DLAI-GEN-2026
+            </span>
+          </div>
+        </article>
+        
+        <article class="cert-card glass" data-od-id="cert-card-5">
+          <div class="cert-card-header">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Advanced React &amp; TypeScript</h3>
+              <div class="cert-issuer">Frontend Masters</div>
+            </div>
+          </div>
+          <div class="cert-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              2025
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Credential ID: FM-REACT-TS-2025
+            </span>
+          </div>
+      </article>
+      
+      <article class="cert-card glass" data-od-id="cert-card-6">
+        <div class="cert-card-header">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h3>Machine Learning &amp; Data Science</h3>
+            <div class="cert-issuer">Stanford Online</div>
+          </div>
+        </div>
+        <div class="cert-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            2024
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            Credential ID: STAN-ML-2024
+          </span>
+        </div>
+      </article>
+    </div>
+
+    <div class="floating-dock-wrap">
+      <div class="floating-dock">
+        <button class="fd-item" title="Beranda" data-od-id="fd-home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+          <span class="fd-tip">Beranda</span>
+        </button>
+        <button class="fd-item" title="Proyek" data-od-id="fd-projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="9" y1="9" x2="15" y2="15"></line>
+            <line x1="15" y1="9" x2="9" y2="15"></line>
+          </svg>
+          <span class="fd-tip">Proyek</span>
+        </button>
+        <button class="fd-item" title="Sertifikat" data-od-id="fd-certs">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          <span class="fd-tip">Sertifikat</span>
+        </button>
+        <button class="fd-item" title="Kontak" data-od-id="fd-contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span class="fd-tip">Kontak</span>
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Portfolio. Dibuat dengan perhatian terhadap detail.</p>
+    </footer>
+
+    <script>
+      const html = document.documentElement;
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      html.setAttribute('data-theme', savedTheme);
+      
+      document.querySelectorAll('.dock-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const val = btn.getAttribute('data-theme-val');
+          if (!val) return;
+          html.setAttribute('data-theme', val);
+          localStorage.setItem('theme', val);
+          
+          document.querySelectorAll('.dock-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          btn.setAttribute('role', 'radio');
+          btn.setAttribute('aria-checked', 'true');
+          document.querySelectorAll('.dock-btn').forEach(b => {
+            if (b !== btn) {
+              b.setAttribute('aria-checked', 'false');
+            }
+          });
+        });
+      });
+      
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.dock-btn[data-theme-val="' + savedTheme + '"]')?.classList.add('active');
+      });
+
+      // Animated text for roles
+      document.addEventListener('DOMContentLoaded', () => {
+        const animatedText = document.querySelector('.animated-text');
+        if (!animatedText) return;
+        
+        const roles = [
+          "Frontend Developer",
+          "Data Analyst", 
+          "UI/UX Designer",
+          "AI Specialist"
+        ];
+        
+        const baseText = "Membangun pengalaman digital yang fungsional dan bermakna melalui desain yang berpusat pada pengguna dan teknologi yang tepat.";
+        
+        let currentIndex = 0;
+        let isAnimating = false;
+        
+        function animateText() {
+          if (isAnimating) return;
+          isAnimating = true;
+          
+          // Fade out
+          animatedText.style.opacity = '0';
+          animatedText.style.transform = 'translateY(-10px)';
+          
+          setTimeout(() => {
+            // Change text
+            animatedText.textContent = `${baseText.replace(/Frontend Developer, Data Analyst, UI\/UX Designer & AI Specialist/g, roles[currentIndex])}`;
+            
+            // Fade in
+            animatedText.style.opacity = '1';
+            animatedText.style.transform = 'translateY(0)';
+            
+            isAnimating = false;
+            
+            // Move to next role
+            currentIndex = (currentIndex + 1) % roles.length;
+          }, 300);
+        }
+        
+        // Start animation after initial load
+        setTimeout(() => {
+          setInterval(animateText, 5000); // Change every 5 seconds
+        }, 1000);
+        
+        // Initial animation to set up
+        setTimeout(animateText, 1500);
+      });
+
+      // Floating dock functionality
+      const fdItems = document.querySelectorAll('.fd-item');
+      fdItems.forEach(item => {
+        item.addEventListener('click', () => {
+          fdItems.forEach(i => i.classList.remove('active'));
+          item.classList.add('active');
+        });
+      });
+      
+      // Initialize active state for floating dock
+      document.addEventListener('DOMContentLoaded', () => {
+        const hash = window.location.hash || '#about';
+        const targetId = hash.replace('#', 'fd-');
+        const activeItem = document.querySelector(`.fd-item[data-od-id="${targetId}"]`);
+        if (activeItem) {
+          activeItem.classList.add('active');
+        }
+        
+// Add scroll event listener for active state
+          const navLinks = document.querySelectorAll('.nav-links a');
+          
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            const fdId = `fd-${sectionId}`;
+            const fdItem = document.querySelector(`.fd-item[data-od-id="${fdId}"]`);
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+              // Update floating dock
+              fdItems.forEach(i => i.classList.remove('active'));
+              if (fdItem) fdItem.classList.add('active');
+              
+              // Update nav-links
+              navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        });
+      });
+        });
+      });
+    </script>
+      <div class="contact">
+        <h2>Mari Berkolaborasi</h2>
+        <p class="lead">Tertarik untuk bekerja sama atau memiliki proyek yang ingin didiskusikan? Hubungi saya melalui platform favorit Anda.</p>
+        
+        <div class="social-links">
+          <a href="mailto:hello@example.com" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Email
+          </a>
+          <a href="https://linkedin.com/in/example" target="_blank" rel="noopener" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/example" target="_blank" rel="noopener" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://behance.net/example" target="_blank" rel="noopener" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="9" x2="15" y2="15"></line>
+              <line x1="15" y1="9" x2="9" y2="15"></line>
+            </svg>
+            Behance
+          </a>
+        </div>
+        
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Form submitted! (Demo only)');">
+          <div class="form-group">
+            <label for="name">Nama</label>
+            <input type="text" id="name" name="name" required="">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required="">
+          </div>
+          <div class="form-group">
+            <label for="message">Pesan</label>
+            <textarea id="message" name="message" required=""></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Portfolio. Dibuat dengan perhatian terhadap detail.</p>
+  </footer>
+
+  <script>
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    
+    document.querySelectorAll('.dock-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.getAttribute('data-theme-val');
+        if (!val) return;
+        html.setAttribute('data-theme', val);
+        localStorage.setItem('theme', val);
+        
+        document.querySelectorAll('.dock-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        btn.setAttribute('role', 'radio');
+        btn.setAttribute('aria-checked', 'true');
+        document.querySelectorAll('.dock-btn').forEach(b => {
+          if (b !== btn) {
+            b.setAttribute('aria-checked', 'false');
+          }
+        });
+      });
+    });
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.dock-btn[data-theme-val="' + savedTheme + '"]')?.classList.add('active');
+    });
+  </script>
+
+
+</body></html>

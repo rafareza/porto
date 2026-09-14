@@ -141,8 +141,8 @@ function About() {
   return (
     <section id="about">
       <div className="section-header">
-        <h2>Tentang Saya</h2>
-        <p>Mengenal lebih dekat latar belakang, keahlian, dan pendekatan profesional saya</p>
+        <h2>About Me</h2>
+        <p>More about my background, expertise, and professional approach</p>
       </div>
 
       <motion.div
@@ -161,27 +161,26 @@ function About() {
         <div className="about-intro">
           <div className="about-status-badge">
             <span className="status-dot"></span>
-            Tersedia untuk Pekerjaan & Kolaborasi
+            Available for Work & Collaboration
           </div>
-          <h3>Membangun Antarmuka Modern & Solusi Berbasis Data</h3>
+          <h3>Building Modern Interfaces & Data-Driven Solutions</h3>
           <p className="about-description">
-            Saya seorang <strong>Frontend Developer</strong> dan <strong>AI Specialist</strong> yang berdedikasi menciptakan pengalaman web interaktif dengan performa optimal dan estetika visual tingkat tinggi.
+            I am a bachelor's degree graduate majoring in Information Systems from Gunadarma University with an interest and passion for front-end web development, data analytics, and UI/UX design.
           </p>
           <p className="about-subtext">
-            Melalui integrasi <strong>UI/UX Design</strong> dan <strong>Data Analysis</strong>, saya merancang aplikasi web yang tidak hanya indah secara visual, namun juga solutif, responsif, dan didukung kecerdasan buatan untuk kebutuhan bisnis modern.
+            I enjoy learning new technologies and building interactive, responsive, and user-friendly web experiences. Currently, I am actively developing my skills in ReactJS, Python, and other modern web technologies.
+          </p>
+          <p className="about-subtext">
+            In addition to coding, I’m also interested in UI/UX design and always strive to combine visual aesthetics with strong functionality in every project I work on.
           </p>
           <div className="about-highlights">
             <div className="highlight-item">
-              <span className="highlight-value">Web Development</span>
-              <span className="highlight-label">Modern, Cepat & Responsif</span>
+              <span className="highlight-value">GPA</span>
+              <span className="highlight-label">3.73</span>
             </div>
             <div className="highlight-item">
-              <span className="highlight-value">UI/UX & Design</span>
-              <span className="highlight-label">Berpusat pada Pengguna</span>
-            </div>
-            <div className="highlight-item">
-              <span className="highlight-value">Data & AI</span>
-              <span className="highlight-label">Analitik & Generative AI</span>
+              <span className="highlight-value">Location</span>
+              <span className="highlight-label">Bekasi, West Java, Indonesia</span>
             </div>
           </div>
         </div>

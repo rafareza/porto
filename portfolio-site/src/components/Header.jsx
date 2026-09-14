@@ -4,10 +4,10 @@ import './Header.css'
 
 function Header() {
   const navItems = [
-    { href: '#about', label: 'Tentang' },
-    { href: '#projects', label: 'Karya' },
-    { href: '#certifications', label: 'Sertifikat' },
-    { href: '#contact', label: 'Kontak' },
+    { href: '#about', label: 'About Me' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#certifications', label: 'Certifications' },
+    { href: '#contact', label: 'Contact' },
   ]
 
   return (
@@ -36,7 +36,7 @@ function Header() {
 
         <div className="navbar-right">
           <a href="#contact" className="nav-cta-btn">
-            <span>Hubungi Saya</span>
+            <span>Contact Me</span>
             <ArrowUpRight size={15} />
           </a>
         </div>
