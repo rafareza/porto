@@ -48,6 +48,11 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const { name, email, message } = formData
+    const subject = encodeURIComponent(`Message from ${name} (${email})`)
+    const body = encodeURIComponent(message)
+    const mailtoUrl = `mailto:rafa.rezandrya08@gmail.com?subject=${subject}&body=${body}`
+    window.open(mailtoUrl, '_blank')
     setIsSubmitted(true)
     setTimeout(() => {
       setIsSubmitted(false)
@@ -64,23 +69,27 @@ function Contact() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2>Mari Berkolaborasi</h2>
+        <h2>Let’s Collaborate</h2>
         <p className="lead" style={{ textAlign: 'center', margin: '0 auto' }}>
-          Tertarik untuk bekerja sama atau memiliki proyek yang ingin didiskusikan? Hubungi saya melalui platform favorit Anda.
+          Interested in collaborating or have a project you’d like to discuss? Contact me through this platform.
         </p>
         
         <div className="social-links">
-          <a href="mailto:hello@example.com" className="social-link">
+          <a href="mailto:rafa.rezandrya08@gmail.com" className="social-link">
             <Mail size={20} />
             Email
           </a>
-          <a href="https://linkedin.com/in/example" target="_blank" rel="noopener" className="social-link">
+          <a href="https://www.linkedin.com/in/rafa-rezandrya-jaelani-070137391" target="_blank" rel="noopener" className="social-link">
             <Linkedin size={20} />
             LinkedIn
           </a>
-          <a href="https://github.com/example" target="_blank" rel="noopener" className="social-link">
-            <Github size={20} />
-            GitHub
+          <a href="https://www.instagram.com/rafa.reza_/" target="_blank" rel="noopener" className="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            Instagram
           </a>
         </div>
         
@@ -95,7 +104,7 @@ function Contact() {
               transition={{ duration: 0.3 }}
             >
               <CheckCircle size={24} />
-              <p>Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.</p>
+              <p>Your message has been sent! We will contact you shortly.</p>
             </motion.div>
           ) : (
             <motion.form
@@ -108,7 +117,7 @@ function Contact() {
               transition={{ duration: 0.3 }}
             >
               <div className="form-group">
-                <label htmlFor="name">Nama</label>
+                <label htmlFor="name">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -130,7 +139,7 @@ function Contact() {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="message">Pesan</label>
+                <label htmlFor="message">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -140,7 +149,7 @@ function Contact() {
                 ></textarea>
               </div>
               <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                Kirim Pesan
+                Send Message
               </button>
             </motion.form>
           )}
