@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Image as IconImage, Plus, Minus, ZoomIn, ZoomOut } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import './Projects.css'
 
 const GithubIcon = ({ size = 15, ...props }) => (
@@ -36,17 +36,13 @@ const BACKGROUND_IMAGES = [
  * @returns {string} Valid image URL
  */
 const getProjectImage = (customImage, title) => {
-  // 1. Use custom image if provided
   if (customImage) return customImage
   
-  // 2. Auto-generate from title (kebab-case)
   const autoPath = `/background/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}.png`
   
-  // 3. Check if auto-generated exists in known images
   const fileName = autoPath.split('/').pop()
   if (BACKGROUND_IMAGES.includes(fileName)) return autoPath
   
-  // 4. Fallback to first available image
   return `/background/${BACKGROUND_IMAGES[0]}`
 }
 
@@ -62,8 +58,6 @@ const createProject = (project) => ({
 })
 
 function Projects() {
-  const [zoomLevel, setZoomLevel] = useState(1)
-  
   const rawProjects = [
     {
       id: 1,
@@ -146,30 +140,13 @@ function Projects() {
     }
   }
 
-  // Process raw projects with image helper
   const projects = rawProjects.map(createProject)
 
-  const handleZoomIn = () => setZoomLevel(prev => Math.min(prev + 0.25, 2.0))
-  const handleZoomOut = () => setZoomLevel(prev => Math.max(prev - 0.25, 0.5))
-
   return (
-    <section id="projects" style={{ zoom: zoomLevel, transformOrigin: 'top center' }}>
+    <section id="projects">
       <div className="section-header">
         <h2>Projects</h2>
         <p>Some projects I've worked on</p>
-        
-        <div className="zoom-controls">
-          <button onClick={handleZoomOut} className="zoom-btn" aria-label="Zoom out">
-            <Minus size={18} />
-          </button>
-          <span className="zoom-level">{Math.round(zoomLevel * 100)}%</span>
-          <button onClick={handleZoomIn} className="zoom-btn" aria-label="Zoom in">
-            <Plus size={18} />
-          </button>
-          <button onClick={() => setZoomLevel(1)} className="zoom-btn reset" aria-label="Reset zoom">
-            <ZoomIn size={18} />
-          </button>
-        </div>
       </div>
       
       <motion.div
@@ -186,32 +163,14 @@ function Projects() {
             variants={itemVariants}
             whileHover={{ y: -8, transition: { duration: 0.25 } }}
           >
-            <div className="project-image-wrapper">
-              <div 
-                className="project-image" 
-                style={{ 
-                  backgroundImage: `url('${project.image}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              />
-              <div className="image-zoom-controls">
-                <button 
-                  className="image-zoom-btn" 
-                  onClick={() => setZoomLevel(prev => Math.min(prev + 0.25, 2.0))}
-                  aria-label="Zoom in image"
-                >
-                  <ZoomIn size={14} />
-                </button>
-                <button 
-                  className="image-zoom-btn" 
-                  onClick={() => setZoomLevel(prev => Math.max(prev - 0.25, 0.5))}
-                  aria-label="Zoom out image"
-                >
-                  <ZoomOut size={14} />
-                </button>
-              </div>
-            </div>
+            <div 
+              className="project-image" 
+              style={{ 
+                backgroundImage: `url('${project.image}')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            />
             <div className="project-content">
               <div className="project-tags">
                 {project.tags.map((tag, index) => (
