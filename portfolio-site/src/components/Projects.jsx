@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Image as ImageIcon } from 'lucide-react'
 import './Projects.css'
 
 const GithubIcon = ({ size = 15, ...props }) => (
@@ -19,8 +19,51 @@ const GithubIcon = ({ size = 15, ...props }) => (
   </svg>
 )
 
+// ===== IMAGE HELPER FUNCTIONS =====
+// Auto-discover images from public/background/
+const BACKGROUND_IMAGES = [
+  'acacia-water.png',
+  'jacoffee.png',
+  'kasku.png',
+  'model-comparison.png',
+  'portofolio.png',
+]
+
+/**
+ * Get image URL with fallback chain
+ * @param {string} customImage - Custom image path (optional)
+ * @param {string} title - Project title for auto-generated path
+ * @returns {string} Valid image URL
+ */
+const getProjectImage = (customImage, title) => {
+  // 1. Use custom image if provided
+  if (customImage) return customImage
+  
+  // 2. Auto-generate from title (kebab-case)
+  const autoPath = `/background/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}.png`
+  
+  // 3. Check if auto-generated exists in known images
+  const fileName = autoPath.split('/').pop()
+  if (BACKGROUND_IMAGES.includes(fileName)) return autoPath
+  
+  // 4. Fallback to first available image
+  return `/background/${BACKGROUND_IMAGES[0]}`
+}
+
+/**
+ * Create project with automatic image handling
+ * @param {Object} project - Project data
+ * @returns {Object} Project with resolved image
+ */
+const createProject = (project) => ({
+  ...project,
+  image: getProjectImage(project.image, project.title),
+  images: project.images ? project.images.map(img => getProjectImage(img, project.title)) : undefined,
+})
+
 function Projects() {
-  const projects = [
+  // ===== PROJECT DATA - Add new projects here =====
+  const rawProjects = [
     {
       id: 1,
       title: 'Acacia Water',
@@ -102,6 +145,9 @@ function Projects() {
     }
   }
 
+  // Process raw projects with image helper
+  const projects = rawProjects.map(createProject)
+
   return (
     <section id="projects">
       <div className="section-header">
@@ -130,8 +176,7 @@ function Projects() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
-            >
-            </div>
+            />
             <div className="project-content">
               <div className="project-tags">
                 {project.tags.map((tag, index) => (
