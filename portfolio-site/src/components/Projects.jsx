@@ -27,7 +27,8 @@ function Projects() {
       description: 'Website for selling and purchasing water and gas at Acacia Water stores.',
       tags: ['React', 'TypeScript', 'Supabase'],
       demoUrl: 'https://acacia-water.vercel.app/',
-      githubUrl: 'https://github.com/rafareza/acacia-water'
+      githubUrl: 'https://github.com/rafareza/acacia-water',
+      image: '/background/acacia-water.png'
     },
     {
       id: 2,
@@ -35,6 +36,7 @@ function Projects() {
       description: 'Designing the user interface (UI) and user experience (UX) for Jacoffee coffee shop',
       tags: ['Figma'],
       demoUrl: 'https://www.figma.com/proto/KAwUZgVfSJbND6TGMCthHt/jacoffee?page-id=0%3A1&node-id=431-6742&p=f&viewport=-1638%2C257%2C0.18&t=nzovOmIiJ7AaWPhI-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=431%3A6720',
+      image: '/background/jacoffee.png'
     },
     {
       id: 3,
@@ -42,7 +44,8 @@ function Projects() {
       description: 'Web-based application for financial record.',
       tags: ['React', 'TypeScript', 'Supabase'],
       demoUrl: 'https://kasku-ten.vercel.app/',
-      githubUrl: 'https://github.com/rafareza/Kasku'
+      githubUrl: 'https://github.com/rafareza/Kasku',
+      image: '/background/kasku.png'
     },
     {
       id: 4,
@@ -50,6 +53,7 @@ function Projects() {
       description: 'Comparison of models and sentiment analysis of the NotebookLM application using SVM and Naive Bayes.',
       tags: ['Python', 'Machine Learning', 'SVM', 'Naive Bayes'],
       demoUrl: 'https://colab.research.google.com/drive/1RVEEBxJNTDvriXgvI4jgGw8KMCf16EII?usp=sharing',
+      image: '/background/model-comparison.png'
     },
     {
       id: 5,
@@ -57,21 +61,24 @@ function Projects() {
       description: 'A mental health detection website using SVM and Naive Bayes algorithms. Built with Flask and machine learning models.',
       tags: ['Python','Flask','Machine Learning', 'SVM', 'Naive Bayes'],
       demoUrl: 'https://demo-fitness.example.com',
-      githubUrl: 'https://github.com/example/fitness-tracker'
+      githubUrl: 'https://github.com/example/fitness-tracker',
+      image: '/background/portofolio.png'
     },
     {
       id: 6,
       title: 'Bunga Indah Website',
       description: 'Website for selling and purchasing flowers at the Bunga Indah shop',
       tags: ['PHP', 'MySQL', 'Bootstrap'],
-      githubUrl: 'https://github.com/rafareza/bunga-indah'
+      githubUrl: 'https://github.com/rafareza/bunga-indah',
+      image: '/background/acacia-water.png'
     },
     {
       id: 7,
       title: 'Portofolio Website',
       description: 'A website to showcase my portfolio.',
       tags: ['React', 'Vite', 'Tailwind CSS', 'JavaScript'],
-      githubUrl: 'https://github.com/rafareza/portofolio'
+      githubUrl: 'https://github.com/rafareza/portofolio',
+      image: '/background/portofolio.png'
     }
   ]
 
@@ -119,12 +126,11 @@ function Projects() {
             <div 
               className="project-image" 
               style={{ 
-                backgroundImage: `url('/background/${project.title.toLowerCase().replace(/\s+/g, '-')}.png')`,
+                backgroundImage: `url('${project.image}')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
             >
-              {project.title}
             </div>
             <div className="project-content">
               <div className="project-tags">
