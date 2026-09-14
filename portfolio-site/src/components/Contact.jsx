@@ -104,7 +104,7 @@ function Contact() {
               transition={{ duration: 0.3 }}
             >
               <CheckCircle size={24} />
-              <p>Your message has been sent! We will contact you shortly.</p>
+              <p>Email client opened! Please send the email to complete.</p>
             </motion.div>
           ) : (
             <motion.form
