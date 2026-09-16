@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, BookOpen, Code, Cpu, ExternalLink } from 'lucide-react'
+import { GraduationCap, BookOpen, Code, Cpu, ExternalLink, ChartBar, ChartBarBigIcon, Code2, Database } from 'lucide-react'
 import './Certifications.css'
 
 const GoogleDriveIcon = ({ size = 16, ...props }) => (
@@ -22,58 +22,41 @@ function Certifications() {
   const certifications = [
     {
       id: 1,
-      title: 'Professional Frontend Developer',
-      issuer: 'Meta',
-      year: '2025',
-      credentialId: 'META-2025-FE',
-      icon: GraduationCap,
-      driveUrl: 'https://drive.google.com/file/d/example-meta-frontend/view'
+      title: 'Bootcamp: Data Analyst FIKTI Learning',
+      issuer: 'Gunadarma University',
+      year: 'May 2023',
+      credentialId: '',
+      icon: Database,
+      driveUrl: 'https://drive.google.com/file/d/1rP3gV4iMsG7eY1ZbyAabsWYeADu2eqOk/view'
     },
     {
       id: 2,
-      title: 'Google Data Analytics Professional',
-      issuer: 'Google',
-      year: '2024',
-      credentialId: 'GOOGLE-DA-2024',
-      icon: BookOpen,
-      driveUrl: 'https://drive.google.com/file/d/example-google-analytics/view'
+      title: 'Bootcamp: Web Development FIKTI Learning',
+      issuer: 'Gunadarma University',
+      year: 'May 2024',
+      credentialId: '',
+      icon: Code,
+      driveUrl: 'https://drive.google.com/file/d/1fHt1ChT_3GCWdUpEBsj3ynnjlVlS6NT-/view'
     },
     {
       id: 3,
-      title: 'UI/UX Design Specialization',
-      issuer: 'Interaction Design Foundation',
-      year: '2025',
-      credentialId: 'IDF-UX-2025',
-      icon: BookOpen,
-      driveUrl: 'https://drive.google.com/file/d/example-idf-ux/view'
+      title: 'Workshop: Javascript Fundamental Analysis',
+      issuer: 'Gunadarma University',
+      year: 'August 2024',
+      credentialId: '',
+      icon: Code2,
+      driveUrl: 'https://drive.google.com/file/d/1EAYolRzkjaqxQ9XZijlyNd2R3JED70yS/view'
     },
     {
       id: 4,
-      title: 'Generative AI with Large Language Models',
-      issuer: 'DeepLearning.AI',
-      year: '2026',
-      credentialId: 'DLAI-GEN-2026',
-      icon: Cpu,
-      driveUrl: 'https://drive.google.com/file/d/example-deeplearning-ai/view'
+      title: 'Data Science Division',
+      issuer: 'Vinix7',
+      year: 'December 2025',
+      credentialId: '',
+      icon: Database,
+      driveUrl: 'https://drive.google.com/file/d/1bTW7J1Bkx9n812H-nBRsyoxvo-msTTMA/view'
     },
-    {
-      id: 5,
-      title: 'Advanced React & TypeScript',
-      issuer: 'Frontend Masters',
-      year: '2025',
-      credentialId: 'FM-REACT-TS-2025',
-      icon: Code,
-      driveUrl: 'https://drive.google.com/file/d/example-frontend-masters/view'
-    },
-    {
-      id: 6,
-      title: 'Machine Learning & Data Science',
-      issuer: 'Stanford Online',
-      year: '2024',
-      credentialId: 'STAN-ML-2024',
-      icon: Cpu,
-      driveUrl: 'https://drive.google.com/file/d/example-stanford-ml/view'
-    }
+
   ]
 
   const containerVariants = {
@@ -139,7 +122,7 @@ function Certifications() {
                   className="cert-drive-btn"
                 >
                   <GoogleDriveIcon size={16} />
-                  <span>Lihat di Google Drive</span>
+                  <span>Direct Link</span>
                   <ExternalLink size={13} className="cert-external-icon" />
                 </a>
               </div>
